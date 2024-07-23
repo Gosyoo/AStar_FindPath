@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "调试TypeScript", // 配置名称，显示在启动配置下拉菜单中
+            "type": "pwa-node", // 配置类型，TypeScript是通过node来进行调试
+            "request": "launch", // 请求配置的类型
+            "program": "${workspaceRoot}/src/main.ts", // 可执行文件的绝对路径
+            "args": [
+                "${relativeFile}" // 传递给程序的命令行参数
+            ],
+            "outFiles": [
+                "${workspaceFolder}/**/*.(m|c|)js",
+                "!**/node_modules/**"
+            ],
+            "preLaunchTask": "tsc: watch - tsconfig.json"
+        },
+        {
+            "name": "Python Debugger: Python File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}"
+        }
+    ]
+}
